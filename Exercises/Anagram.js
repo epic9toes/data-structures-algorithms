@@ -12,32 +12,26 @@ function validAnagram(str1, str2) {
   if (str1.length != str2.length) {
     return false;
   }
-  // create objects to hold the respective characters of each string and their repetitions
-  let objStr1 = {};
-  let objStr2 = {};
+  // create object to hold the characters from str1
+  let lookup = {};
 
   // calculate the repetition of chars in the first string by iterating through
   for (var c of str1) {
     var char = c.toLowerCase();
-    objStr1[char] ? (objStr1[char] += 1) : (objStr1[char] = 1);
+    lookup[char] ? (lookup[char] += 1) : (lookup[char] = 1);
   }
 
-  // calculate the repetition of chars in the second string by iterating through
+  // compare the repetition of chars in the second string to the lookup object
   for (var c of str2) {
     var char = c.toLowerCase();
-    objStr2[char] ? (objStr2[char] += 1) : (objStr2[char] = 1);
-  }
-  //compare if the words repetition of both strings match
-  for (let key in objStr1) {
-    if (!objStr2.hasOwnProperty(key)) {
+    if (!lookup[char]) {
       return false;
-    }
-    if (objStr1[key] !== objStr2[key]) {
-      return false;
+    } else {
+      lookup[char] -= 1;
     }
   }
 
   return true;
 }
 
-console.log(validAnagram("azz", "zza"));
+console.log(validAnagram("azz", "zzaa"));
