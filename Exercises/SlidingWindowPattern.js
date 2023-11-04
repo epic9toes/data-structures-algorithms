@@ -43,7 +43,7 @@ function maxSubarraySum(arr, num) {
  */
 function maxSubarraySumRefactor(arr, num) {
   let maxSum = 0;
-  let tempSum = o;
+  let tempSum = 0;
   if (arr.length < num) {
     return null;
   }
@@ -59,3 +59,5 @@ function maxSubarraySumRefactor(arr, num) {
 
   return maxSum;
 }
+
+console.log(maxSubarraySumRefactor([2, 5, 8, 9, 4, 2, 6, 1, 7, 4, 7, 7], 4));
