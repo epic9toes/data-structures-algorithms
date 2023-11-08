@@ -46,6 +46,8 @@ function naiveBubbleSort2(arr) {
 // in reduced frequency as each sorted item get to the end and also stop if the item
 // is almost sorted and has no need to go through the entire array.
 // by checking if noSwaps was previously done then it means the array is sorted.
+// The time complexity of Bubble Sort is O(N^2) when the data is not sorted but when it is nearly sorted,
+// The time complexity is O(N) but this doesn't mean it is adviced to use.
 function naiveBubbleSort2(arr) {
   var noSwaps;
   for (var i = arr.length; i > 0; i--) {
